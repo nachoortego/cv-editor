@@ -70,7 +70,8 @@ export default function App() {
           <p className="app-hint">
             <strong>ATS / links:</strong> en terminal,{" "}
             <code>npm run export:pdf:es</code> o <code>export:pdf:en</code> —
-            mismo diseño (Ubuntu, iconos), texto seleccionable y links activos.
+            usa Chrome/Edge local; mismo diseño, texto seleccionable y links
+            activos.
           </p>
         </div>
       </aside>

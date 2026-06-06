@@ -21,19 +21,15 @@ Mantiene el diseño exacto de la preview. Los links y la selección de texto dep
 
 ### Opción B — ATS / links (Playwright)
 
-Primera vez:
-
-```bash
-npx playwright install chromium
-```
-
-Luego:
+Usa **Chrome o Edge instalados en tu PC** (no hace falta descargar Chromium salvo que no tengas ninguno).
 
 ```bash
 npm run export:pdf:es
 # o
 npm run export:pdf:en
 ```
+
+Si falla por falta de navegador: `npx playwright install chromium` (solo entonces).
 
 Genera `CV-Ignacio-Ortego-es.pdf` (o `-en.pdf`) renderizando el **mismo HTML** que la preview: fuente Ubuntu, iconos SVG, layout A4, texto seleccionable y links clickeables.
 

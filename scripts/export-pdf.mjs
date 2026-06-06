@@ -49,6 +49,30 @@ function startPreview() {
   );
 }
 
+async function launchBrowser() {
+  const channels = ["msedge", "chrome", "chrome-beta", "chrome-dev"];
+
+  for (const channel of channels) {
+    try {
+      const browser = await chromium.launch({ channel, headless: true });
+      console.log(`Using installed ${channel}.`);
+      return browser;
+    } catch {
+      console.log(`${channel} not available.`);
+    }
+  }
+
+  try {
+    const browser = await chromium.launch({ headless: true });
+    console.log("Using Playwright bundled Chromium.");
+    return browser;
+  } catch {
+    throw new Error(
+      "No browser available. Install Chrome or Edge, or run: npx playwright install chromium",
+    );
+  }
+}
+
 async function main() {
   console.log("Building production bundle…");
   await runCommand("npm", ["run", "build"]);
@@ -59,7 +83,7 @@ async function main() {
   try {
     await waitForServer(baseUrl);
 
-    const browser = await chromium.launch();
+    const browser = await launchBrowser();
     const page = await browser.newPage();
 
     await page.goto(`${baseUrl}/?export=1&locale=${locale}`, {
