@@ -1,0 +1,166 @@
+:root {
+  --bg: #ececec;
+  --sidebar-bg: #1a1a1a;
+  --sidebar-text: #f5f5f5;
+  --sidebar-muted: #a8a8a8;
+  --accent: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Ubuntu", system-ui, sans-serif;
+  background: var(--bg);
+  color: #111;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 100vh;
+}
+
+.app-sidebar {
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  padding: 2rem 1.5rem;
+}
+
+.app-sidebar__inner {
+  position: sticky;
+  top: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.app-kicker {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sidebar-muted);
+}
+
+.app-heading {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 500;
+}
+
+.app-copy {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--sidebar-muted);
+}
+
+.app-copy code {
+  color: #ddd;
+  font-size: 0.8rem;
+}
+
+.app-tabs {
+  display: flex;
+  gap: 0.35rem;
+  padding: 0.25rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.app-tab {
+  flex: 1;
+  appearance: none;
+  border: 0;
+  border-radius: 6px;
+  padding: 0.5rem 0.65rem;
+  background: transparent;
+  color: var(--sidebar-muted);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.app-tab:hover {
+  color: var(--sidebar-text);
+}
+
+.app-tab--active {
+  background: var(--accent);
+  color: #111;
+}
+
+.app-button {
+  appearance: none;
+  border: 0;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  background: var(--accent);
+  color: #111;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.app-button:hover {
+  background: #e5e5e5;
+}
+
+.app-hint {
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--sidebar-muted);
+}
+
+.app-preview {
+  display: flex;
+  justify-content: center;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+@media (max-width: 900px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+
+  .app-sidebar__inner {
+    position: static;
+  }
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  html,
+  body {
+    background: #fff;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .app {
+    display: block;
+  }
+
+  .app-preview,
+  .no-print-bg {
+    padding: 0 !important;
+    background: #fff !important;
+  }
+}
