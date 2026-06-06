@@ -11,10 +11,35 @@ npm run dev
 
 1. Elegí la pestaña **Español** o **English**.
 2. Pedí cambios en el chat; el contenido se edita en `src/cvData.ts` (ambos idiomas en paralelo).
-3. Clic en **Exportar PDF** → **Guardar como PDF** (escala 100%, sin encabezados/pies de página).
+3. Exportá el PDF con una de estas opciones:
+
+### Opción A — Rápida (desde la UI)
+
+Clic en **Exportar PDF (rápido)** → **Guardar como PDF** (escala 100%, sin encabezados/pies de página).
+
+Mantiene el diseño exacto de la preview. Los links y la selección de texto dependen del navegador.
+
+### Opción B — ATS / links (Playwright)
+
+Primera vez:
+
+```bash
+npx playwright install chromium
+```
+
+Luego:
+
+```bash
+npm run export:pdf:es
+# o
+npm run export:pdf:en
+```
+
+Genera `CV-Ignacio-Ortego-es.pdf` (o `-en.pdf`) renderizando el **mismo HTML** que la preview: fuente Ubuntu, iconos SVG, layout A4, texto seleccionable y links clickeables.
 
 ## Estructura
 
 - `src/cvData.ts` — contenido ES/EN (`cvContent`)
 - `src/components/CVDocument.tsx` — layout del documento
 - `src/styles/cv.css` — estilos tipográficos A4
+- `scripts/export-pdf.mjs` — exportación Playwright (opción B)

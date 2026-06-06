@@ -60,12 +60,17 @@ export default function App() {
             y actualizo ambas versiones.
           </p>
           <button type="button" className="app-button" onClick={exportPdf}>
-            Exportar PDF
+            Exportar PDF (rápido)
           </button>
           <p className="app-hint">
-            Exporta la pestaña activa ({localeLabels[locale]}). En el diálogo,
-            elegí <strong>Guardar como PDF</strong>, escala <strong>100%</strong>{" "}
-            y desactivá encabezados y pies de página.
+            <strong>Rápido:</strong> imprime la pestaña activa ({localeLabels[locale]}
+            ). Elegí <strong>Guardar como PDF</strong>, escala{" "}
+            <strong>100%</strong>, sin encabezados/pies de página.
+          </p>
+          <p className="app-hint">
+            <strong>ATS / links:</strong> en terminal,{" "}
+            <code>npm run export:pdf:es</code> o <code>export:pdf:en</code> —
+            mismo diseño (Ubuntu, iconos), texto seleccionable y links activos.
           </p>
         </div>
       </aside>

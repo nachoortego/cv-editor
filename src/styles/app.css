@@ -129,6 +129,13 @@ body {
   padding: 2.5rem 1.5rem 4rem;
 }
 
+.app-export {
+  margin: 0;
+  padding: 0;
+  display: block;
+  background: #fff;
+}
+
 @media (max-width: 900px) {
   .app {
     grid-template-columns: 1fr;
