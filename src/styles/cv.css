@@ -1,32 +1,33 @@
-/* A4 at ~96dpi screen preview; print uses exact A4 via @page */
+/* A4 real — mismas proporciones en preview e impresión */
 .cv-page {
-  width: 595px;
-  min-height: 842px;
-  padding: 14px 29px 24px;
+  width: 210mm;
+  min-height: 297mm;
+  padding: 4.95mm 10.24mm 8.47mm;
   background: #fff;
   color: #000;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2.82mm 11.29mm rgba(0, 0, 0, 0.12);
   font-weight: 300;
-  font-size: 10px;
+  font-size: 3.53mm;
   line-height: 1.35;
+  box-sizing: border-box;
 }
 
 .cv-header {
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 3.53mm;
 }
 
 .cv-name {
   margin: 0;
-  font-size: 22px;
+  font-size: 7.76mm;
   line-height: 1.2;
   font-weight: 400;
   letter-spacing: 0.01em;
 }
 
 .cv-title {
-  margin: 0.45rem 0 0.65rem;
-  font-size: 14px;
+  margin: 1.59mm 0 2.29mm;
+  font-size: 4.94mm;
   font-weight: 400;
 }
 
@@ -35,15 +36,15 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 0.35rem 1.75rem;
-  font-size: 9px;
+  gap: 1.24mm 6.18mm;
+  font-size: 3.18mm;
   line-height: 1.2;
 }
 
 .cv-contact__link {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 1.41mm;
   color: inherit;
   text-decoration: none;
 }
@@ -53,58 +54,58 @@
 }
 
 .cv-contact__icon {
-  width: 10px;
-  height: 10px;
+  width: 3.53mm;
+  height: 3.53mm;
   flex-shrink: 0;
 }
 
 .cv-section {
-  margin-top: 10px;
+  margin-top: 3.53mm;
 }
 
 .cv-section--last {
-  margin-top: 8px;
+  margin-top: 2.82mm;
 }
 
 .cv-section-title h2 {
-  margin: 0 0 4px;
-  font-size: 9px;
+  margin: 0 0 1.41mm;
+  font-size: 3.18mm;
   font-weight: 500;
   letter-spacing: 0.02em;
   text-transform: uppercase;
 }
 
 .cv-section-title hr {
-  margin: 0 0 6px;
+  margin: 0 0 2.12mm;
   border: 0;
-  border-top: 1px solid #000;
+  border-top: 0.35mm solid #000;
 }
 
 .cv-body {
-  margin: 0 0 4px;
-  font-size: 10px;
+  margin: 0 0 1.41mm;
+  font-size: 3.53mm;
   line-height: 1.35;
   text-align: justify;
 }
 
 .cv-stack {
   display: grid;
-  gap: 8px;
+  gap: 2.82mm;
 }
 
 .cv-stack--tight {
-  gap: 6px;
+  gap: 2.12mm;
 }
 
 .cv-job__role {
   margin: 0;
-  font-size: 11px;
+  font-size: 3.88mm;
   line-height: 1.25;
   font-weight: 300;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 4px;
+  gap: 1.41mm;
 }
 
 .cv-job__role-link {
@@ -120,28 +121,37 @@
 }
 
 .cv-job__role-link-icon {
-  width: 10px;
-  height: 10px;
+  width: 3.53mm;
+  height: 3.53mm;
 }
 
-.cv-project__title {
+.cv-project__role {
   margin: 0;
-  font-size: 11px;
+  font-size: 3.88mm;
   line-height: 1.25;
+  font-weight: 300;
+}
+
+.cv-project__meta {
+  margin: 0 0 1.41mm;
+  font-size: 3.53mm;
+  line-height: 1.25;
+}
+
+.cv-project__meta strong {
   font-weight: 500;
 }
 
-.cv-job__role-detail,
-.cv-project__subtitle {
-  margin: 0 0 2px;
-  font-size: 10px;
+.cv-job__role-detail {
+  margin: 0 0 1.41mm;
+  font-size: 3.53mm;
   line-height: 1.25;
   font-weight: 300;
 }
 
 .cv-job__meta {
-  margin: 0 0 4px;
-  font-size: 10px;
+  margin: 0 0 1.41mm;
+  font-size: 3.53mm;
   line-height: 1.25;
 }
 
@@ -165,14 +175,14 @@
 }
 
 .cv-project__list {
-  margin: 2px 0 0;
-  padding-left: 14px;
+  margin: 0;
+  padding-left: 4.94mm;
   list-style-type: disc;
 }
 
 .cv-project__bullet {
-  margin: 0 0 3px;
-  font-size: 10px;
+  margin: 0 0 1.06mm;
+  font-size: 3.53mm;
   line-height: 1.35;
   font-weight: 300;
   text-align: justify;
@@ -185,36 +195,49 @@
 .cv-edu-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8px 12px;
+  gap: 2.82mm 4.24mm;
 }
 
 .cv-edu-col {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 3.53mm;
 }
 
 .cv-edu-item__title {
   margin: 0;
-  font-size: 10px;
+  font-size: 3.53mm;
   line-height: 1.25;
   font-weight: 500;
 }
 
 .cv-edu-item__meta {
-  margin: 3px 0 0;
-  font-size: 10px;
+  margin: 1.06mm 0 0;
+  font-size: 3.53mm;
   line-height: 1.25;
   font-weight: 300;
 }
 
 @media print {
+  html,
+  body,
+  #root {
+    width: 210mm;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+
   .cv-page {
     width: 210mm;
     min-height: 297mm;
+    max-width: none;
+    margin: 0;
     box-shadow: none;
-    padding: 10mm 12mm 12mm;
     page-break-after: avoid;
+    page-break-inside: avoid;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 
   .cv-contact__link,

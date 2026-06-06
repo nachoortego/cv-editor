@@ -148,6 +148,9 @@ body {
   html,
   body {
     background: #fff;
+    width: 210mm;
+    margin: 0;
+    padding: 0;
   }
 
   .no-print {
@@ -156,10 +159,16 @@ body {
 
   .app {
     display: block;
+    width: 210mm;
+    margin: 0;
+    padding: 0;
   }
 
   .app-preview,
   .no-print-bg {
+    display: block;
+    width: 210mm;
+    margin: 0;
     padding: 0 !important;
     background: #fff !important;
   }

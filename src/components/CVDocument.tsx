@@ -104,16 +104,32 @@ function ProjectListItem({ item }: { item: ProjectItem }) {
   );
 }
 
+function ProjectMeta({ subtitle }: { subtitle: string }) {
+  const [headline, ...rest] = subtitle.split(" | ");
+
+  return (
+    <p className="cv-project__meta">
+      <strong>{headline}</strong>
+      {rest.map((part) => (
+        <span key={part}>
+          <span className="cv-job__meta-sep"> | </span>
+          {part}
+        </span>
+      ))}
+    </p>
+  );
+}
+
 function ProjectsBlock({ data }: Props) {
   return (
     <section className="cv-section">
       <SectionTitle>{data.sectionLabels.projects}</SectionTitle>
-      <div className="cv-stack cv-stack--tight">
+      <div className="cv-stack">
         {data.projects.map((project) => (
           <article key={project.title} className="cv-project">
-            <p className="cv-project__title">{project.title}</p>
+            <p className="cv-project__role">{project.title}</p>
             {project.subtitle ? (
-              <p className="cv-project__subtitle">{project.subtitle}</p>
+              <ProjectMeta subtitle={project.subtitle} />
             ) : null}
             <ul className="cv-project__list">
               {project.items.map((item) => (

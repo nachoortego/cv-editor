@@ -11,7 +11,7 @@ npm run dev
 
 1. Elegí la pestaña **Español** o **English**.
 2. Pedí cambios en el chat; el contenido se edita en `src/cvData.ts` (ambos idiomas en paralelo).
-3. Clic en **Exportar PDF** → **Guardar como PDF** (desactivá encabezados/pies de página).
+3. Clic en **Exportar PDF** → **Guardar como PDF** (escala 100%, sin encabezados/pies de página).
 
 ## Estructura
 

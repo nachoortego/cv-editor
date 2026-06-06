@@ -9,13 +9,28 @@ const localeLabels: Record<Locale, string> = {
   en: "English",
 };
 
+function readLocaleFromUrl(): Locale {
+  const value = new URLSearchParams(window.location.search).get("locale");
+  return value === "en" ? "en" : "es";
+}
+
 function exportPdf() {
   window.print();
 }
 
 export default function App() {
-  const [locale, setLocale] = useState<Locale>("es");
+  const exportMode =
+    new URLSearchParams(window.location.search).get("export") === "1";
+  const [locale, setLocale] = useState<Locale>(readLocaleFromUrl);
   const data = getCVData(locale);
+
+  if (exportMode) {
+    return (
+      <main className="app-export">
+        <CVDocument data={data} />
+      </main>
+    );
+  }
 
   return (
     <div className="app">
@@ -49,8 +64,8 @@ export default function App() {
           </button>
           <p className="app-hint">
             Exporta la pestaña activa ({localeLabels[locale]}). En el diálogo,
-            elegí <strong>Guardar como PDF</strong> y desactivá encabezados y
-            pies de página.
+            elegí <strong>Guardar como PDF</strong>, escala <strong>100%</strong>{" "}
+            y desactivá encabezados y pies de página.
           </p>
         </div>
       </aside>
